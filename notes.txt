@@ -7,4 +7,38 @@ pip install Langchain
 # Create requirements file
 pip freeze > requirements.txt
 # pip install -r requirements.txt for installing all packages again
+# install python-dotenv to use .env files
+pip install python-dotenv
+# Install langchain tools for chat model with openai
+pip install -qU langchain-openai
 
+# Installing Ollama go to https://ollama.com/
+curl -fsSL https://ollama.com/install.sh | sh
+# Install lspci to automatically detect and install GPU dependencies.
+sudo apt update && sudo apt install -y pciutils
+# verify GPU
+lspci | grep -i vga
+# Start Ollama server 
+ollama serve
+# In new terminal download deepseek r1 1.5b
+ollama run deepseek-r1:1.5b
+# This will download and enable chat locally
+
+# Inside venv install langchain for ollama
+pip install -qU langchain-ollama
+pip install -qU ollama
+
+# Show available models
+ollama list
+
+# NAME                ID              SIZE      MODIFIED       
+# deepseek-r1:1.5b    a42b25d8c10a    1.1 GB    15 minutes ago
+
+# For document loaders we install
+pip install langchain-community
+# install beautifulsoup4 as it is used in webloaders in langchain
+pip install beautifulsoup4
+# install pypdf as it is used in pdfloader in langchain
+pip install pypdf
+# Install langchain text splitters
+pip install langchain-text-splitters
